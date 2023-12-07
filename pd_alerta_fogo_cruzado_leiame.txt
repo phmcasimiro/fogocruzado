@@ -1,0 +1,12 @@
+Export das escolas em atividade
+Criação de Buffer das escolas em atividade (500m)
+Export dos registros do Fogo Cruzado com os filtros: ano=2023, dias da semana (STQQS), horário de 04:00 as 22:00 horas
+Intersect dos registros do Fogo Cruzado com o Buffer de 500 metros das escolas em atividade
+1º Summarize atributes: cod escola, escola, municipio, ano_fogo_cruzado - Esse summarize irá me retornar o total de tiroteio no entorno de 500 metros na escola
+2º Summarize atributes: cod escola, escola, municipio, ano_fogo_cruzado e presença de agente de seguranca - Esse summarize irá me retornar o total de tiroteio no entorno de 500 metros da escola separando se teve ou não presença de agente de seguranca.
+Export 2 tabelas com os seguintes filtros: presença de agente de seguranca "sim" e outra tabela com agente de seguranca "não"
+3º Summarize atributes: cod escola, escola, municipio, ano_fogo_cruzado, mes e presença de agente de seguranca - Esse summarize irá me retornar o total de tiroteio no entorno de 500 metros da escola separando se teve ou não presença de agente de seguranca por mes
+Export 24 tabelas filtradas por mes e presenca de agente de seguranca do 3º Summarize
+Join entre a tabela do 1º summarize e as tabelas do passo 7 (deste passo-a-passo)
+Join (diversos) entre a tabela do passo 10 (deste passo-a-passo) e as 24 tabelas do passo 9 (deste passo-apasso)
+calculate field: substituindo os valores <null> de diversos campos por "0".
